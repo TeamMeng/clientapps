@@ -1,4 +1,4 @@
-pub mod api;
+pub(crate) mod api;
 mod ui;
 
 use chrono::{DateTime, Utc};
@@ -6,12 +6,12 @@ use serde::{Deserialize, Serialize};
 
 pub use ui::App;
 
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct StoryItem {
     pub id: i64,
     pub title: String,
     pub url: Option<String>,
-    pub test: Option<String>,
+    pub text: Option<String>,
     #[serde(default)]
     pub by: String,
     #[serde(default)]
@@ -25,7 +25,7 @@ pub struct StoryItem {
     pub r#type: String,
 }
 
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Comment {
     pub id: i64,
     /// there will be no by field if the comment was deleted
@@ -42,8 +42,7 @@ pub struct Comment {
     pub r#type: String,
 }
 
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
-
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct StoryData {
     #[serde(flatten)]
     pub item: StoryItem,
