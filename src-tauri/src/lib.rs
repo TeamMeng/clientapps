@@ -56,6 +56,7 @@ fn setup(app: &mut App) -> Result<(), Box<dyn Error>> {
             .content_protected(true);
     }
 
+    #[allow(unused_variables)]
     let webview = builder.build()?;
 
     #[cfg(debug_assertions)]

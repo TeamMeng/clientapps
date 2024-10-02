@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2.0.0-rc",
-  "productName": "app",
+  "productName": "hackernews",
   "version": "0.1.0",
-  "identifier": "com.app.app",
+  "identifier": "com.TeamMeng.hackernews",
   "build": {
     "beforeDevCommand": "cd ../hackernews && dx serve --port 8080 --hot-reload",
     "devUrl": "http://localhost:8080",
