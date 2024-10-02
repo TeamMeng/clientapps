@@ -1,7 +1,7 @@
 [package]
-name = "hn"
+name = "app"
 version = "0.1.0"
-description = "Hacker News CLI"
+description = "A Tauri App"
 authors = ["you"]
 edition = "2021"
 license = "MIT"
@@ -9,14 +9,20 @@ license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
-name = "hn_lib"
+name = "app_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
 tauri-build = { version = "2.0.0-rc", features = [] }
 
 [dependencies]
-tauri = { version = "2.0.0-rc", features = [] }
-tauri-plugin-shell = "2.0.0-rc"
+anyhow = "1.0.89"
+dirs = "5.0.1"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+tauri = { version = "2.0.0-rc", features = [] }
+tauri-plugin-log = { version = "2.0.0-rc.2", features = ["colored"] }
+tauri-plugin-clipboard-manager = "2.1.0-beta.7"
+tauri-plugin-shell = "2.0.0-rc"
+tauri-plugin-window-state = "2.0.0-rc"
+tracing = { version = "0.1.40", features = ["log"] }
